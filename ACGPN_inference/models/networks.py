@@ -65,7 +65,7 @@ def define_Unet(input_nc, gpu_ids=[]):
 
 def define_UnetMask(input_nc, gpu_ids=[]):
     netG = UnetMask(input_nc,output_nc=4)
-    netG.cuda(gpu_ids[0])
+    netG.cuda(0)#gpu_ids[0]
     netG.apply(weights_init)
     return netG
 
