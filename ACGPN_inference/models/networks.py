@@ -71,7 +71,7 @@ def define_UnetMask(input_nc, gpu_ids=[]):
 
 def define_Refine(input_nc, output_nc, gpu_ids=[]):
     netG = Refine(input_nc, output_nc)
-    netG.cuda(gpu_ids[0])
+    netG.cuda(0)#gpu_ids[0]
     netG.apply(weights_init)
     return netG
 
